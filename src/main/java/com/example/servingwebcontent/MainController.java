@@ -1,6 +1,5 @@
 package com.example.servingwebcontent;
 
-import com.example.servingwebcontent.Internal.UserCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
     @Autowired
-    private static PersonRepository personRepository;
-
-
+    private PersonRepository personRepository;
 
     @GetMapping("/")
     public String homePage(Model model){
@@ -28,13 +25,14 @@ public class MainController {
     @PostMapping("/registration")
     public String registrationSubmit(@RequestParam String name, @RequestParam String age, Model model){
         Person person = new Person(name,Integer.parseInt(age));
-        UserCreator.addUser(person);
+        personRepository.save(person);
         return "redirect:/";
     }
 
     @GetMapping("/archieve")
     public String showArchieve(Model model){
-        model.addAttribute("persons", UserCreator.getAllUsers());
+        Iterable<Person> persons = personRepository.findAll();
+        model.addAttribute("persons", persons);
         return "archieve";
     }
 
