@@ -13,8 +13,7 @@ import java.sql.PreparedStatement;
 
 @Controller
 public class MainController {
-   // @Autowired
-    //private PersonRepository personRepository;
+
     @Autowired
     private UserCreator userCreator;
 
@@ -30,18 +29,13 @@ public class MainController {
 
     @PostMapping("/registration")
     public String registrationSubmit(@RequestParam String name, @RequestParam String age, Model model){
-        Person person = new Person(name,Integer.parseInt(age));
-        userCreator.addUser(person);
-       // personRepository.save(person);
+        userCreator.addUser(name,age);
         return "redirect:/";
     }
 
     @GetMapping("/archieve")
     public String showArchieve(Model model){
-       userCreator.showArchieve(model);
-      //  Iterable<Person> persons = userCreator.getAllUser();
-       // Iterable<Person> persons = personRepository.findAll();
-        //model.addAttribute("persons", persons);
+       userCreator.getAllPersons(model);
         return "archieve";
     }
 
