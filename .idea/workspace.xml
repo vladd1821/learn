@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e3707f1-0b78-4785-bf37-3ea33ec63d4a" name="Changes" comment="вернул старую версию">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_32.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="1e3707f1-0b78-4785-bf37-3ea33ec63d4a" name="Changes" comment="разделил логику, добавил preparedStatement (нужно доработать id) поменял подключение к базе данных">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serving-web-content-complete.iml" beforeDir="false" afterPath="$PROJECT_DIR$/serving-web-content-complete.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/ServingWebContentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/ServingWebContentApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/internal/UserCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servingwebcontent/internal/UserCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/servingwebcontent/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/servingwebcontent/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/servingwebcontent/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/servingwebcontent/Person.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/servingwebcontent/ServingWebContentApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/servingwebcontent/ServingWebContentApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678202008167</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="разделил логику, добавил preparedStatement (нужно доработать id) поменял подключение к базе данных">
+      <created>1678812568096</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678812568096</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add UserCreator but not work" />
     <MESSAGE value="вернул старую версию" />
-    <option name="LAST_COMMIT_MESSAGE" value="вернул старую версию" />
+    <MESSAGE value="разделил логику, добавил preparedStatement (нужно доработать id) поменял подключение к базе данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="разделил логику, добавил preparedStatement (нужно доработать id) поменял подключение к базе данных" />
   </component>
 </project>

@@ -8,10 +8,13 @@ import org.springframework.ui.Model;
 
 import javax.swing.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class UserCreator {
-
+    private static Set<Long> allGeneratedId = new HashSet<>();
     private static final String URL ="jdbc:mysql://localhost:8889/testdb";
     private static final String User ="root";
     private static final String Password = "root";
@@ -49,9 +52,10 @@ public class UserCreator {
         Person person = new Person(name,Integer.parseInt(age));
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("Insert into person values(?,?,?)");
-            //preparedStatement.setLong(1, person.generateId());
-            preparedStatement.setInt(1, person.getAge());
-            preparedStatement.setString(2, person.getName());
+
+            preparedStatement.setLong(1, generateId());
+            preparedStatement.setInt(2, person.getAge());
+            preparedStatement.setString(3, person.getName());
 
             preparedStatement.executeUpdate();
 
@@ -59,5 +63,23 @@ public class UserCreator {
             e.printStackTrace();
         }
        // personRepository.save(person);
+    }
+
+    public Set<Long> getAllId() throws SQLException {
+
+        PreparedStatement ps = connection.prepareStatement("select id FROM person");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()){
+          allGeneratedId.add(rs.getLong(1));
+        }
+        return  allGeneratedId;
+    }
+
+    public Long generateId() throws SQLException {
+        Long id = Double.valueOf(Math.random()*100000).longValue();
+        if (getAllId().contains(id)){
+            generateId();
+        }
+        return id;
     }
 }
